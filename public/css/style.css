@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+  }
+
+/* first page */
+
+body {
+    background-color: #FB6B6B;
+    font-family: Righteous;
+    color: #333333;
+}
+
+h1 {
+    font-family: 'Righteous';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 45px;
+}
+
+button {
+    width: 246px;
+    height: 54px;
+    background: #FFFFFF;
+    border: 1px solid #D70900;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    color: #D70900;
+    font-size: 18px;
+    margin-top: 30px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: center;
+}
+
+.welcome {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.bloco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    width: 136px;
+    height: 161px;
+    margin-bottom: 13px;
+    margin-top: 148px;
+}
+
+/* second page */
+
+.header {
+    display: flex;
+    color: white;
+    margin-top: 42px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.imageHeader {
+    width: 52px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.perguntas {
+    background-color: white;
+    width: 300px;
+    height: 65px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.pergunta {
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.lista {
+    display: flex;
+    justify-content: center;
+}
+
+.bottom {
+    height: 70px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottomText {
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+/* JS */
+
+.hidden {
+    display: none;
+}
