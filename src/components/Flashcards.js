@@ -49,10 +49,32 @@ export default function Flashcards({ visibleFlashcards }){
                         <p className="questiontext" >Pergunta 6</p>
                         <img src="assets/Vector.svg" alt="" />
                     </li>
+                    <li className="question" >
+                        <p className="questiontext" >Pergunta 7</p>
+                        <img src="assets/Vector.svg" alt="" />
+                    </li>
+                    <li className="question" >
+                        <p className="questiontext" >Pergunta 8</p>
+                        <img src="assets/Vector.svg" alt="" />
+                    </li>
                 </ul>
             </div>
-            <div className="bottom">
+            <div className="bottom hidden">
                 <p className="bottomText">0/4 CONCLUÍDOS</p>
+                <div className="bolinhas">
+                    <img src="assets/right.png" alt="" />
+                </div>
+            </div>
+            <div className="bottom2">
+                <div className="titleresult">
+                    <img src="assets/party.png" alt="" />
+                    <p>Parabéns!</p>
+                </div>
+                <p className="bottomDescription" >Você não esqueceu de nenhum flashcard!</p>
+                <p className="bottomText">0/4 CONCLUÍDOS</p>
+                <div className="bolinhas">
+                    <img src="assets/right.png" alt="" />
+                </div>
             </div>
         </div>
     )
