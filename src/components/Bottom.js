@@ -1,21 +1,22 @@
-export default function Bottom(){
+export default function Bottom( {concluded, result, imgresult, description, imgbolinha} ){
     return(
     <>
-        <div className="bottom ">
-            <p className="bottomText">0/4 CONCLUÍDOS</p>
+        <div className="bottom hidden">
+            <p className="bottomText">{ concluded }</p>
             <div className="bolinhas">
-                <img src="assets/right.png" alt="" />
+                <img src={ imgbolinha }/>
             </div>
         </div>
-        <div className="bottom2 hidden">
+    
+        <div className="bottom2 ">
             <div className="titleresult">
-                <img src="assets/party.png" alt="" />
-                <p>Parabéns!</p>
+                <img src={ imgresult }/>
+                <p>{ result }</p>
             </div>
-            <p className="bottomDescription" >Você não esqueceu de nenhum flashcard!</p>
-            <p className="bottomText">0/4 CONCLUÍDOS</p>
+            <p className="bottomDescription" >{ description }</p>
+            <p className="bottomText">{ concluded }</p>
             <div className="bolinhas">
-                <img src="assets/right.png" alt="" />
+                <img src={ imgbolinha }/>
             </div>
         </div>
     </>
