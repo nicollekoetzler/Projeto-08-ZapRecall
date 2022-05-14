@@ -1,14 +1,14 @@
 export default function Bottom( {concluded, result, imgresult, description, imgbolinha} ){
     return(
     <>
-        <div className="bottom hidden">
+        <div className="bottom ">
             <p className="bottomText">{ concluded }</p>
             <div className="bolinhas">
                 <img src={ imgbolinha }/>
             </div>
         </div>
     
-        <div className="bottom2 ">
+        <div className="bottom2 hidden">
             <div className="titleresult">
                 <img src={ imgresult }/>
                 <p>{ result }</p>

@@ -1,13 +1,24 @@
+import React from "react";
+
 function Questions({ question, shownquestion, answer }){
+
+    const [visibleQuestion, setVisibleQuestion] = React.useState("");
+    const [visibleShownQuestion, setVisibleShownQuestion] = React.useState("hidden");
+
+    function redirectQuestionShownQuestion() {
+        setVisibleQuestion("hidden");
+        setVisibleShownQuestion("");
+    }
+
 
     return(
         <>
-            <li className="question" >
+            <li onClick={ redirectQuestionShownQuestion } className={ `question ${ visibleQuestion }` }>
                 <p className="questiontext " >{ question }</p>
                 <img src="assets/Vector.svg" />
             </li>
 
-            <li className="shownquestion hidden" >
+            <li className={ `shownquestion ${ visibleShownQuestion }` } >
                 <p className="shownquestiontext" >{ shownquestion }</p>
                 <img  className="flecha" src="assets/flecha.svg" />
             </li>
@@ -78,7 +89,7 @@ const itemsQuestions = [
     return (
         <div className="lista">
                 <ul>
-                    {itemsQuestions.map(item => <Questions question={item.question} shownquestion={item.shownquestion} answer={item.answer} />)}
+                    {itemsQuestions.map((item, index) => <Questions key={index} question={item.question} shownquestion={item.shownquestion} answer={item.answer} />)}
                 </ul>
             </div>
     )

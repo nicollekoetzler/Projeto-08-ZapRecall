@@ -20,7 +20,7 @@ const itemsBottom = [
                 <h1>ZapRecall</h1>
             </div>
             <Lista />
-            {itemsBottom.map(item => <Bottom concluded={item.concluded} result={item.result} description={item.description} imgbolinha={item.imgbolinha} imgresult={item.imgresult} />)}
+            {itemsBottom.map((item, index) => <Bottom  key={index} concluded={item.concluded} result={item.result} description={item.description} imgbolinha={item.imgbolinha} imgresult={item.imgresult} />)}
         </div>
     )
 }
