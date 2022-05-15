@@ -4,10 +4,16 @@ function Questions({ question, shownquestion, answer }){
 
     const [visibleQuestion, setVisibleQuestion] = React.useState("");
     const [visibleShownQuestion, setVisibleShownQuestion] = React.useState("hidden");
+    const [visibleAnswer, setVisibleAnswer] = React.useState("hidden");
 
     function redirectQuestionShownQuestion() {
         setVisibleQuestion("hidden");
         setVisibleShownQuestion("");
+    }
+
+    function redirectShownQuestionAnswer() {
+        setVisibleShownQuestion("hidden");
+        setVisibleAnswer("");
     }
 
 
@@ -18,12 +24,12 @@ function Questions({ question, shownquestion, answer }){
                 <img src="assets/Vector.svg" />
             </li>
 
-            <li className={ `shownquestion ${ visibleShownQuestion }` } >
+            <li onClick={ redirectShownQuestionAnswer } className={ `shownquestion ${ visibleShownQuestion }` } >
                 <p className="shownquestiontext" >{ shownquestion }</p>
                 <img  className="flecha" src="assets/flecha.svg" />
             </li>
 
-            <li className="answer hidden" >
+            <li className={ `answer ${ visibleAnswer }` } >
                 <p className="answertext" >{ answer }</p>
                 <div className="botoes">
                     <div className="botao1">
