@@ -5,6 +5,10 @@ function Questions({ question, shownquestion, answer }){
     const [visibleQuestion, setVisibleQuestion] = React.useState("");
     const [visibleShownQuestion, setVisibleShownQuestion] = React.useState("hidden");
     const [visibleAnswer, setVisibleAnswer] = React.useState("hidden");
+    
+    const [actionWrongButton, setActionWrongButton] = React.useState("");
+    const [actionAlmostButton, setActionAlmostButton] = React.useState("");
+    const [actionRightButton, setActionRightButton] = React.useState("");
 
     function redirectQuestionShownQuestion() {
         setVisibleQuestion("hidden");
@@ -16,6 +20,10 @@ function Questions({ question, shownquestion, answer }){
         setVisibleAnswer("");
     }
 
+    function redirectButtonQuestion() {
+        setVisibleAnswer("hidden");
+        setVisibleQuestion("");
+    }
 
     return(
         <>
@@ -32,13 +40,13 @@ function Questions({ question, shownquestion, answer }){
             <li className={ `answer ${ visibleAnswer }` } >
                 <p className="answertext" >{ answer }</p>
                 <div className="botoes">
-                    <div className="botao1">
+                    <div onClick={ redirectButtonQuestion } className="wrongButton">
                         <p className="buttontext" >Não lembrei</p>
                     </div>
-                    <div className="botao2">
+                    <div onClick={ redirectButtonQuestion } className="almostButton">
                         <p className="buttontext" >Quase não lembrei</p>
                     </div>
-                    <div className="botao3">
+                    <div onClick={ redirectButtonQuestion } className="rightButton">
                         <p className="buttontext" >Zap!</p>
                     </div>
                 </div>

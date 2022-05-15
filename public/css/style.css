@@ -225,7 +225,7 @@ button {
     color: white;
 }
 
-.botao1 {
+.wrongButton {
     width: 85.17px;
     height: 37.17px;
     background: #FF3030;
@@ -233,9 +233,10 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
-.botao2 {
+.almostButton {
     width: 85.17px;
     height: 37.17px;
     background: #FF922E;
@@ -243,9 +244,10 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
-.botao3 {
+.rightButton {
     width: 85.17px;
     height: 37.17px;
     background: #2FBE34;
@@ -253,6 +255,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .buttontext {
