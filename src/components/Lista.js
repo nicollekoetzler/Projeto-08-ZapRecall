@@ -6,9 +6,8 @@ function Questions({ question, shownquestion, answer }){
     const [visibleShownQuestion, setVisibleShownQuestion] = React.useState("hidden");
     const [visibleAnswer, setVisibleAnswer] = React.useState("hidden");
     
-    const [actionWrongButton, setActionWrongButton] = React.useState("");
-    const [actionAlmostButton, setActionAlmostButton] = React.useState("");
-    const [actionRightButton, setActionRightButton] = React.useState("");
+    const [stateQuestion, setStateQuestion] = React.useState("");
+    const [iconTipe, setIconTipe] = React.useState("play-outline");
 
     function redirectQuestionShownQuestion() {
         setVisibleQuestion("hidden");
@@ -20,16 +19,30 @@ function Questions({ question, shownquestion, answer }){
         setVisibleAnswer("");
     }
 
-    function redirectButtonQuestion() {
+    function redirectButtonQuestion(state) {
         setVisibleAnswer("hidden");
         setVisibleQuestion("");
+        setStateQuestion(state);
+        choseIcon(state);
     }
+
+    function choseIcon(state) {
+        if(state === "right"){
+            setIconTipe("checkmark-circle");
+        } else if(state === "almost"){
+            setIconTipe("help-circle")
+        } else {
+            setIconTipe("close-circle")
+        }
+    }
+
+
 
     return(
         <>
-            <li onClick={ redirectQuestionShownQuestion } className={ `question ${ visibleQuestion }` }>
-                <p className="questiontext " >{ question }</p>
-                <img src="assets/Vector.svg" />
+            <li onClick={ stateQuestion === "" ? redirectQuestionShownQuestion : () => "" } className={ `question ${ visibleQuestion } ${stateQuestion}` }>
+                <p className={`questiontext `}  >{ question }</p>
+                <ion-icon name={ iconTipe }></ion-icon>
             </li>
 
             <li onClick={ redirectShownQuestionAnswer } className={ `shownquestion ${ visibleShownQuestion }` } >
@@ -40,13 +53,13 @@ function Questions({ question, shownquestion, answer }){
             <li className={ `answer ${ visibleAnswer }` } >
                 <p className="answertext" >{ answer }</p>
                 <div className="botoes">
-                    <div onClick={ redirectButtonQuestion } className="wrongButton">
+                    <div onClick={ () => redirectButtonQuestion("wrong") } className="wrongButton">
                         <p className="buttontext" >Não lembrei</p>
                     </div>
-                    <div onClick={ redirectButtonQuestion } className="almostButton">
+                    <div onClick={ () => redirectButtonQuestion("almost") } className="almostButton">
                         <p className="buttontext" >Quase não lembrei</p>
                     </div>
-                    <div onClick={ redirectButtonQuestion } className="rightButton">
+                    <div onClick={ () => redirectButtonQuestion("right") } className="rightButton">
                         <p className="buttontext" >Zap!</p>
                     </div>
                 </div>
@@ -102,9 +115,9 @@ const itemsQuestions = [
 
     return (
         <div className="lista">
-                <ul>
-                    {itemsQuestions.map((item, index) => <Questions key={index} question={item.question} shownquestion={item.shownquestion} answer={item.answer} />)}
-                </ul>
-            </div>
+            <ul>
+                {itemsQuestions.map((item, index) => <Questions key={index} question={item.question} shownquestion={item.shownquestion} answer={item.answer} />)}
+            </ul>
+        </div>
     )
 }
