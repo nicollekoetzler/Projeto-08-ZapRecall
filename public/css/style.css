@@ -158,9 +158,8 @@ button {
     text-align: center;
 }
 
-.bolinhas > img {
-    margin-left: 2.5px;
-    margin-right: 2.5px;
+.bolinhas > ion-icon {
+    font-size: 24px;
 }
 
 .bottomText {

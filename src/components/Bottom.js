@@ -1,11 +1,11 @@
-export default function Bottom( {concluded, result, imgresult, description, imgbolinha} ){
+import Icons from "./Icons"
+
+export default function Bottom( {concluded, result, imgresult, description, iconBottom} ){
     return(
     <>
         <div className="bottom ">
             <p className="bottomText">{ concluded }</p>
-            <div className="bolinhas">
-                <img src={ imgbolinha }/>
-            </div>
+            <Icons iconBottom={iconBottom}/>
         </div>
     
         <div className="bottom2 hidden">
@@ -16,7 +16,7 @@ export default function Bottom( {concluded, result, imgresult, description, imgb
             <p className="bottomDescription" >{ description }</p>
             <p className="bottomText">{ concluded }</p>
             <div className="bolinhas">
-                <img src={ imgbolinha }/>
+                <ion-icon name={ iconBottom }></ion-icon>
             </div>
         </div>
     </>

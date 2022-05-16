@@ -1,17 +1,19 @@
+import React from "react";
 import Lista from "./Lista"
 import Bottom from "./Bottom"
 
 export default function Flashcards({ visibleFlashcards }){
 
-const itemsBottom = [
-    {
-        concluded: "0/4 CONCLUÍDOS",
-        result: "Parabéns!",
-        imgbolinha: "assets/right.png",
-        imgresult: "assets/party.png",
-        description: "Você não esqueceu de nenhum flashcard!"
+    const [ iconBottom, setIconBottom ] = React.useState([]);
+    //const [ concluded, setConstConcluded ] = x
+
+    const itemsBottom = {
+            concluded: `${iconBottom.length}/8 CONCLUÍDOS`,
+            result: "Parabéns!",
+            iconBottom: iconBottom,
+            imgresult: "assets/party.png",
+            description: "Você não esqueceu de nenhum flashcard!"
     }
-]
 
     return(
         <div className={ `flashcards ${ visibleFlashcards }` }>
@@ -19,8 +21,8 @@ const itemsBottom = [
                 <img className="imageHeader" src="assets/image 1.svg" />
                 <h1>ZapRecall</h1>
             </div>
-            <Lista />
-            {itemsBottom.map((item, index) => <Bottom  key={index} concluded={item.concluded} result={item.result} description={item.description} imgbolinha={item.imgbolinha} imgresult={item.imgresult} />)}
+            <Lista setIconBottom={setIconBottom} iconBottom={iconBottom}/>
+            <Bottom concluded={itemsBottom.concluded} result={itemsBottom.result} description={itemsBottom.description} iconBottom={itemsBottom.iconBottom} imgresult={itemsBottom.imgresult} />
         </div>
     )
 }
