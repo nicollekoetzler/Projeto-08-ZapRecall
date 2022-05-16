@@ -12,7 +12,6 @@ export default function Icons({ iconBottom }){
         }
     }
 
-
     return(
         <div className="bolinhas">
             {iconsJSX}

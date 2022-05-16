@@ -1,23 +1,14 @@
-import Icons from "./Icons"
+import FinalMessage from "./FinalMessage";
+import Icons from "./Icons";
 
-export default function Bottom( {concluded, result, imgresult, description, iconBottom} ){
+export default function Bottom( {iconBottom, qtdQuestions} ){
+
     return(
     <>
         <div className="bottom ">
-            <p className="bottomText">{ concluded }</p>
+            { iconBottom.length === qtdQuestions ? <FinalMessage iconBottom={iconBottom}/> : <></> }
+            <p className="bottomText">{ `${iconBottom.length}/${qtdQuestions} CONCLUÍDOS` }</p>
             <Icons iconBottom={iconBottom}/>
-        </div>
-    
-        <div className="bottom2 hidden">
-            <div className="titleresult">
-                <img src={ imgresult }/>
-                <p>{ result }</p>
-            </div>
-            <p className="bottomDescription" >{ description }</p>
-            <p className="bottomText">{ concluded }</p>
-            <div className="bolinhas">
-                <ion-icon name={ iconBottom }></ion-icon>
-            </div>
         </div>
     </>
     )
